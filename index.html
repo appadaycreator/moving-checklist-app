@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366F1" />
     <title>引越しToDoリスト・チェックアプリ【無料】無料Webツール</title>
     <meta name="description" content="引越し前後の手続き・準備を時系列チェックリストで管理。スケジュール計算も自動化。登録不要・完全無料でご利用いただけます。">
     <link rel="canonical" href="https://appadaycreator.com/moving-checklist-app/">
@@ -12,6 +13,9 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:image" content="https://appadaycreator.com/assets/ogp-default.png">
+<meta property="og:site_name" content="appadaycreator" />
+<meta name="twitter:image" content="https://appadaycreator.com/assets/ogp-default.png" />
+<meta name="twitter:description" content="引越し前後の手続き・準備を時系列チェックリストで管理。スケジュール計算も自動化。登録不要・完全無料でご利用いただけます。" />
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://appadaycreator.com/moving-checklist-app/">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
@@ -59,7 +63,17 @@
         }
         /* ── サービス固有CSS ── */
 
-    </style>
+    
+@media print{
+  header,footer,nav,button,.no-print,
+  [class*="share"],[class*="affiliate"],[id*="share"],
+  [id*="affiliate"],[id*="banner"],
+  script,noscript{display:none!important}
+  body{background:#fff!important;color:#000!important;font-size:12pt}
+  [id*="result"],[id*="output"],[id*="advice"],[id*="diagnosis"],[class*="result"]{display:block!important}
+  a[href]::after{content:none!important}
+}
+</style>
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -151,6 +165,26 @@
               <p style="font-size:13px;color:#6b7280;line-height:1.7;">A: スクリーンショットでの保存またはSNSシェアボタンからご共有いただけます。</p>
             </div>
             </div>
+        </div>
+
+        <!-- A8アフィリエイト: アールクリーニング -->
+        <div class="card" style="margin-top:8px;text-align:center;background:linear-gradient(135deg,#fef3c7,#fffbeb);border:2px solid #f59e0b;" role="complementary" aria-label="アールクリーニング広告">
+            <p style="font-size:13px;font-weight:700;color:#92400e;margin-bottom:8px;">🏠 引越し後の大掃除もプロにお任せ！</p>
+            <a href="https://px.a8.net/svt/ejp?a8mat=4B3YV7+C7G7SA+4X26+ZQ80I" rel="nofollow" target="_blank" rel="noopener" style="display:inline-block;background:#f59e0b;color:#fff;padding:10px 20px;border-radius:8px;font-weight:bold;font-size:14px;text-decoration:none;">
+                🧹 アールクリーニング【激トク6時間パック】→
+            </a>
+            <p style="font-size:11px;color:#78716c;margin-top:6px;">引越し後の原状回復・新居の入居前清掃に</p>
+            <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4B3YV7+C7G7SA+4X26+ZQ80I" alt="">
+        </div>
+
+        <!-- P1(横展開#26): 印刷・PDF出力ボタン -->
+        <div class="card" style="margin-top:8px;text-align:center;">
+            <p style="font-size:13px;font-weight:600;color:#374151;margin-bottom:8px;">🖨 チェックリストを印刷・PDF保存</p>
+            <button onclick="window.print()" id="moving-print-btn"
+                    style="background:#fff;border:2px solid #d1d5db;color:#374151;font-weight:bold;padding:10px 24px;border-radius:10px;font-size:13px;cursor:pointer;">
+                🖨 印刷・PDF保存
+            </button>
+            <p style="font-size:11px;color:#9ca3af;margin-top:6px;">Chromeの印刷ダイアログで「PDFとして保存」を選択できます</p>
         </div>
 
         <!-- SNSシェアCTA -->
