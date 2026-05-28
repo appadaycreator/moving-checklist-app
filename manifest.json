@@ -3,7 +3,7 @@
   "short_name": "moving-check",
   "start_url": "/moving-checklist-app/",
   "display": "standalone",
-  "background_color": "#6366f1",
+  "background_color": "#ffffff",
   "theme_color": "#7c3aed",
   "scope": "/moving-checklist-app/"
 }
