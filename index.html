@@ -13,7 +13,7 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#2563EB">
 <title>引越しToDoリスト・チェックアプリ【無料】Webツール</title>
-<meta name="description" content="引越し日を入力するだけで手続きを時系列チェックリストで管理。カウントダウン・進捗グラフ・カスタムタスク追加対応の無料Webツール。単身・家族・ペットにも対応。">
+<meta name="description" content="引越し日を入力するだけで手続きを時系列管理。単身・家族・ペット対応のカウントダウン付き無料チェックリスト。カスタムタスク追加・進捗グラフで漏れなく準備完了。">
 <meta name="author" content="AppADayCreator">
 <link rel="canonical" href="https://appadaycreator.com/moving-checklist-app/">
 <meta name="mobile-web-app-capable" content="yes">
@@ -205,6 +205,31 @@ footer a:hover { color: #e2e8f0; }
   .task-item.completed span { text-decoration: line-through; opacity: .6; }
 }
 
+/* ── Filter Tabs ── */
+.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.filter-tab { padding: 7px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1.5px solid var(--border); background: #fff; color: var(--muted); cursor: pointer; transition: all .15s; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.filter-tab img { width: 16px; height: 16px; object-fit: contain; }
+.filter-tab:hover { border-color: var(--primary); color: var(--primary); }
+.filter-tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* ── Info Side Panel ── */
+.info-panel { background: var(--card); border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,.06); padding: 18px; margin-bottom: 14px; }
+.info-panel-title { font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.info-panel-title img { width: 20px; height: 20px; object-fit: contain; }
+.info-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--light-blue); color: var(--primary); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 12px; margin-bottom: 8px; }
+
+/* ── Mobile UX Section ── */
+.mob-ux-section { background: var(--light-blue); border-radius: 14px; margin-bottom: 20px; padding: 24px; }
+.mob-ux-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
+.mob-ux-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mob-ux-photo { border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.1); }
+.mob-ux-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+
+/* ── Photo Cards Row ── */
+.photo-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
+.photo-row-item { border-radius: 10px; overflow: hidden; }
+.photo-row-item img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+
 /* ── AdSense ── */
 ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; margin: 0 !important; height: 0 !important; }
 
@@ -214,11 +239,15 @@ ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; margin: 0
   .task-layout { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .custom-task-card { position: static; }
+  .mob-ux-grid { grid-template-columns: 1fr; }
+  .photo-row { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
   .header-nav { display: none; }
   .main-card-body { padding: 16px; }
   .countdown-big-num { font-size: 52px; }
+  .mob-ux-photos { grid-template-columns: 1fr 1fr; }
+  .photo-row { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
 </head>
@@ -266,8 +295,8 @@ ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; margin: 0
     <!-- Main App Card -->
     <div class="main-card" id="checklist-form">
       <div class="main-card-header">
-        <h1>引越しToDoリスト・チェックアプリ【無料】</h1>
-        <p>引越し日を入力するだけで手続きを時系列チェックリストで自動管理</p>
+        <h1>引越しToDoリスト【無料Webツール】日付入力で手続き・荷造りを自動スケジュール管理</h1>
+        <p>あなたの状況に合わせてやることリストを整理し、引越し準備を万全に進めましょう</p>
       </div>
       <div class="main-card-body">
         <div class="app-grid">
@@ -275,7 +304,7 @@ ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; margin: 0
           <!-- Form Panel -->
           <div class="form-panel">
             <div class="panel-title">
-              <img src="assets/icons/split/01-05.png" alt="">チェックリスト生成
+              <img src="assets/icons/split/01-05.png" alt="">新しいチェックリストを作る
             </div>
             <div id="form-error" class="form-error-box"></div>
             <button onclick="restorePreviousData()" class="btn-history">📋 履歴から選ぶ</button>
@@ -306,7 +335,7 @@ ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; margin: 0
             <p class="field-hint">チェック完了の目標日を設定（達成度が表示されます）</p>
             <input type="date" id="goaldate" placeholder="引越し日より前の日を選択">
 
-            <button class="btn-generate" onclick="generate()">
+            <button class="btn-generate" onclick="filterByCategory('all');generate()">
               <img src="assets/icons/split/01-04.png" alt="" style="width:20px;height:20px;filter:brightness(0) invert(1);">
               チェックリストを作成
             </button>
@@ -364,6 +393,24 @@ ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; margin: 0
 
     <!-- Result: Task list + Custom task -->
     <div class="result" id="result">
+      <!-- Filter Tabs -->
+      <div class="filter-bar" id="filter-tabs" aria-label="カテゴリフィルター">
+        <button class="filter-tab active" data-cat="all" onclick="filterByCategory('all')">
+          <img src="assets/icons/split/01-02.png" alt="">全カテゴリ
+        </button>
+        <button class="filter-tab" data-cat="mover" onclick="filterByCategory('mover')">
+          <img src="assets/icons/split/01-05.png" alt="">引越し業者
+        </button>
+        <button class="filter-tab" data-cat="lifeline" onclick="filterByCategory('lifeline')">
+          <img src="assets/icons/split/02-04.png" alt="">ライフライン
+        </button>
+        <button class="filter-tab" data-cat="city" onclick="filterByCategory('city')">
+          <img src="assets/icons/split/04-03.png" alt="">役所手続き
+        </button>
+        <button class="filter-tab" data-cat="packing" onclick="filterByCategory('packing')">
+          <img src="assets/icons/split/01-06.png" alt="">荷造り・梱包
+        </button>
+      </div>
       <div class="task-layout">
         <!-- Task List -->
         <div class="task-panel-card">
@@ -419,6 +466,55 @@ ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; margin: 0
     <ins class="adsbygoogle" style="display:block;min-height:90px;margin:0 0 16px" data-ad-client="ca-pub-8427583028015858" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}</script>
 
+    <!-- Photo strip: 引越し準備シーン -->
+    <div class="photo-row" aria-hidden="true">
+      <div class="photo-row-item"><img src="assets/photos/photo_11.jpg" alt="引越し準備シーン" loading="lazy"></div>
+      <div class="photo-row-item"><img src="assets/photos/photo_12.jpg" alt="荷造りシーン" loading="lazy"></div>
+      <div class="photo-row-item"><img src="assets/photos/photo_13.jpg" alt="新居準備" loading="lazy"></div>
+      <div class="photo-row-item"><img src="assets/photos/photo_14.jpg" alt="引越し作業" loading="lazy"></div>
+    </div>
+
+    <!-- Mobile UX Section -->
+    <div class="mob-ux-section">
+      <div class="panel-title" style="margin-bottom:16px;">
+        <img src="assets/icons/split/03-04.png" alt="">スマホでも使いやすい！
+      </div>
+      <div class="mob-ux-grid">
+        <div>
+          <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:16px;">アプリのインストール不要。スマホのブラウザで開いてすぐ使えます。チェック状態は自動保存されるので、外出先からも確認できます。</p>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:10px;padding:12px;">
+              <img src="assets/icons/split/03-04.png" alt="" style="width:32px;height:32px;object-fit:contain;flex-shrink:0;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--text);">タップで簡単チェック</div>
+                <div style="font-size:12px;color:var(--muted);">タップ領域を広く設計しスマホ操作に最適化</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:10px;padding:12px;">
+              <img src="assets/icons/split/03-06.png" alt="" style="width:32px;height:32px;object-fit:contain;flex-shrink:0;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--text);">自動保存・続きから再開</div>
+                <div style="font-size:12px;color:var(--muted);">localStorageに自動保存。いつでも続きから</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:10px;padding:12px;">
+              <img src="assets/icons/split/02-06.png" alt="" style="width:32px;height:32px;object-fit:contain;flex-shrink:0;">
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--text);">LINEで家族と共有</div>
+                <div style="font-size:12px;color:var(--muted);">LINEボタンからURLを家族に即シェア</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mob-ux-photos">
+          <div class="mob-ux-photo"><img src="assets/photos/photo_15.jpg" alt="スマホ利用イメージ" loading="lazy"></div>
+          <div class="mob-ux-photo" style="margin-top:20px;"><img src="assets/photos/photo_16.jpg" alt="タブレット利用イメージ" loading="lazy"></div>
+          <div class="mob-ux-photo"><img src="assets/photos/photo_17.jpg" alt="PC利用イメージ" loading="lazy"></div>
+          <div class="mob-ux-photo" style="margin-top:20px;"><img src="assets/photos/photo_18.jpg" alt="引越し準備中" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- おすすめサービス -->
     <div class="services-section">
       <div class="panel-title" style="margin-bottom:12px;">🔗 関連サービス</div>
@@ -444,6 +540,16 @@ ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; margin: 0
             <div class="service-card-desc">荷造りチェックリスト</div>
           </div>
         </a>
+      </div>
+    </div>
+
+    <!-- Services Photo Cards -->
+    <div style="margin-bottom:16px;">
+      <div class="photo-row">
+        <div class="photo-row-item"><img src="assets/photos/photo_19.jpg" alt="引越しシーン1" loading="lazy"></div>
+        <div class="photo-row-item"><img src="assets/photos/photo_20.jpg" alt="引越しシーン2" loading="lazy"></div>
+        <div class="photo-row-item"><img src="assets/photos/photo_21.jpg" alt="引越しシーン3" loading="lazy"></div>
+        <div class="photo-row-item"><img src="assets/photos/photo_22.jpg" alt="引越しシーン4" loading="lazy"></div>
       </div>
     </div>
 
@@ -901,6 +1007,29 @@ ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; margin: 0
       const today = new Date(); today.setHours(0,0,0,0);
       const days = Math.ceil((date - today) / (1000*60*60*24));
       el.textContent = days > 0 ? days : '0';
+    }
+
+    function filterByCategory(cat) {
+      var KEYWORDS = {
+        mover: ['引越し業者', '相見積もり', '引越し業者の', '搬出', '搬入', 'トラック', '業者'],
+        lifeline: ['電気', 'ガス', '水道', 'インターネット', '回線', 'ライフライン', '停止', '開始の連絡'],
+        city: ['役所', '転出届', '転入届', '免許証', 'マイナンバー', '住民票', '車検証', 'ナンバープレート', '銀行', 'クレジットカード', '保険', '郵便局'],
+        packing: ['荷造り', '梱包', '段ボール', '不用品', '粗大', '断捨離', 'カーテン', '冷蔵庫', '家具', '引越し後の']
+      };
+      document.querySelectorAll('.filter-tab').forEach(function(t){
+        t.classList.toggle('active', t.getAttribute('data-cat') === cat);
+      });
+      document.querySelectorAll('.category-section').forEach(function(section){
+        var items = section.querySelectorAll('.task-item');
+        var hasVisible = false;
+        items.forEach(function(item){
+          var text = item.textContent;
+          var show = cat === 'all' || (KEYWORDS[cat] || []).some(function(kw){ return text.indexOf(kw) !== -1; });
+          item.style.display = show ? '' : 'none';
+          if(show) hasVisible = true;
+        });
+        section.style.display = hasVisible ? '' : 'none';
+      });
     }
 
     document.addEventListener('DOMContentLoaded', () => {
