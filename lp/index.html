@@ -76,20 +76,23 @@ a { color: inherit; text-decoration: none; }
 .header-cta:hover { background: var(--primary-dark); }
 
 /* ── Hero ── */
-.hero { position: relative; min-height: 600px; display: flex; align-items: center; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; z-index: 0; }
-.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(15,30,70,.82) 0%, rgba(37,99,235,.65) 55%, rgba(16,185,129,.3) 100%); z-index: 1; }
+.hero { position: relative; min-height: 600px; display: flex; align-items: center; overflow: hidden; background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 45%, #e0f2fe 100%); }
+.hero-bg { display: none; }
+.hero-overlay { display: none; }
 .hero-wrap { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 60px 20px; display: grid; grid-template-columns: 1fr 420px; gap: 40px; align-items: center; }
-.hero-badge { display: inline-block; background: rgba(16,185,129,.25); color: #6ee7b7; border: 1px solid rgba(16,185,129,.4); font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-bottom: 16px; }
-.hero-h1 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; color: #fff; line-height: 1.25; margin-bottom: 18px; }
-.hero-sub { font-size: 15px; color: rgba(255,255,255,.88); line-height: 1.8; margin-bottom: 28px; max-width: 480px; }
-.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
-.hero-pills { display: flex; gap: 8px; flex-wrap: wrap; }
-.hero-pill { background: rgba(255,255,255,.15); color: rgba(255,255,255,.9); border: 1px solid rgba(255,255,255,.3); font-size: 12px; font-weight: 600; padding: 5px 14px; border-radius: 20px; }
+.hero-badge { display: inline-block; background: rgba(37,99,235,.1); color: var(--primary); border: 1px solid rgba(37,99,235,.25); font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-bottom: 16px; }
+.hero-h1 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; color: var(--text); line-height: 1.25; margin-bottom: 18px; }
+.hero-sub { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 22px; max-width: 480px; }
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.hero-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.hero-pill { background: rgba(37,99,235,.08); color: var(--primary); border: 1px solid rgba(37,99,235,.18); font-size: 12px; font-weight: 600; padding: 5px 14px; border-radius: 20px; }
+.hero-social-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.hero-line-btn { display: inline-flex; align-items: center; gap: 6px; background: #06C755; color: #fff; font-size: 13px; font-weight: 700; padding: 7px 16px; border-radius: 8px; text-decoration: none; transition: opacity .2s; }
+.hero-line-btn:hover { opacity: .88; }
+.hero-device-badge { background: #fff; border: 1px solid var(--border); color: var(--muted); font-size: 11px; font-weight: 600; padding: 5px 10px; border-radius: 6px; display: inline-flex; align-items: center; gap: 4px; }
 
 /* App Mockup */
-.app-mockup { background: #fff; border-radius: 18px; box-shadow: 0 20px 60px rgba(0,0,0,.35); overflow: hidden; }
+.app-mockup { background: #fff; border-radius: 18px; box-shadow: 0 20px 60px rgba(37,99,235,.18); overflow: hidden; }
 .mockup-topbar { background: var(--primary); color: #fff; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; font-weight: 700; }
 .mockup-progress-badge { background: rgba(255,255,255,.25); padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
 .mockup-body { padding: 20px 16px; }
@@ -98,9 +101,9 @@ a { color: inherit; text-decoration: none; }
 .mockup-days-info { font-size: 12px; color: var(--muted); }
 .mockup-days-label { font-size: 16px; font-weight: 700; color: var(--text); }
 .mockup-progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-.mockup-ring { position: relative; width: 64px; height: 64px; flex-shrink: 0; }
+.mockup-ring { position: relative; width: 80px; height: 80px; flex-shrink: 0; }
 .mockup-ring svg { transform: rotate(-90deg); }
-.mockup-ring-pct { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: var(--accent); }
+.mockup-ring-pct { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; color: var(--accent); }
 .mockup-progress-info { flex: 1; }
 .mockup-progress-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
 .mockup-progress-bar { height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
@@ -121,18 +124,21 @@ a { color: inherit; text-decoration: none; }
 .problem-arrow { width: 28px; height: 28px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
 .problem-text { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.5; }
 .problems-photo-wrap { border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.12); }
-.problems-photo-wrap img { width: 100%; height: 320px; object-fit: cover; }
+.problems-photo-wrap img { width: 100%; height: 380px; object-fit: cover; }
 
 /* ── Solutions ── */
-.solutions-section { padding: 80px 0; background: var(--primary); }
-.solutions-section .section-header h2 { color: #fff; }
-.solutions-section .section-header p { color: rgba(255,255,255,.8); }
-.solutions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.solution-card { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); border-radius: 14px; padding: 24px; display: flex; align-items: flex-start; gap: 14px; transition: background .2s; }
-.solution-card:hover { background: rgba(255,255,255,.18); }
+.solutions-section { padding: 80px 0; background: #f8fafc; }
+.solutions-section .section-header h2 { color: var(--text); }
+.solutions-section .section-header p { color: var(--muted); }
+.solutions-layout { display: grid; grid-template-columns: 360px 1fr; gap: 40px; align-items: center; }
+.solutions-photo-side { border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.1); }
+.solutions-photo-side img { width: 100%; height: 420px; object-fit: cover; }
+.solutions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.solution-card { background: #fff; border: 1.5px solid rgba(37,99,235,.15); border-radius: 14px; padding: 20px; display: flex; align-items: flex-start; gap: 14px; transition: all .2s; }
+.solution-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(37,99,235,.12); }
 .solution-icon { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; }
-.solution-card h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-.solution-card p { font-size: 13px; color: rgba(255,255,255,.8); line-height: 1.6; }
+.solution-card h3 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.solution-card p { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
 /* ── Features ── */
 .features-section { padding: 80px 0; background: #fff; }
@@ -230,6 +236,8 @@ a { color: inherit; text-decoration: none; }
   .hero-wrap { grid-template-columns: 1fr; }
   .app-mockup { display: none; }
   .problems-grid { grid-template-columns: 1fr; }
+  .solutions-layout { grid-template-columns: 1fr; }
+  .solutions-photo-side img { height: 240px; }
   .solutions-grid { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .steps-grid { grid-template-columns: 1fr; }
@@ -238,6 +246,7 @@ a { color: inherit; text-decoration: none; }
   .screenshots-grid { grid-template-columns: 1fr; }
   .hero-ctas { flex-direction: column; }
   .btn-lg { width: 100%; text-align: center; }
+  .hero-social-row { flex-direction: row; }
 }
 @media (max-width: 480px) {
   .features-grid { grid-template-columns: 1fr; }
@@ -283,13 +292,23 @@ a { color: inherit; text-decoration: none; }
       <p class="hero-sub">引越し日を入力するだけで、手続きを時系列チェックリストで自動管理。カウントダウン・進捗グラフ・世帯構成パーソナライズ・カスタムタスク対応の無料Webツール。</p>
       <div class="hero-ctas">
         <a href="/moving-checklist-app/" class="btn btn-accent btn-lg">引越し日を入力する →</a>
-        <a href="#steps" class="btn btn-outline-white btn-lg">使い方を見る</a>
+        <a href="#steps" class="btn btn-outline btn-lg">使い方を見る</a>
       </div>
       <div class="hero-pills">
         <span class="hero-pill">📄 PDF出力可</span>
-        <span class="hero-pill">✅ 無料で使える</span>
+        <span class="hero-pill">✅ 完全無料</span>
         <span class="hero-pill">🔒 登録不要</span>
         <span class="hero-pill">📱 スマホ対応</span>
+        <span class="hero-pill">💻 PC対応</span>
+      </div>
+      <div class="hero-social-row">
+        <a href="https://line.me/R/msg/text/?引越しToDoリスト【無料】%0Ahttps://appadaycreator.com/moving-checklist-app/" class="hero-line-btn" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINEでシェア
+        </a>
+        <span class="hero-device-badge">📱 スマホ</span>
+        <span class="hero-device-badge">💻 PC</span>
+        <span class="hero-device-badge">📊 タブレット</span>
       </div>
     </div>
     <div class="hero-right">
@@ -310,10 +329,10 @@ a { color: inherit; text-decoration: none; }
           </div>
           <div class="mockup-progress-row">
             <div class="mockup-ring">
-              <svg viewBox="0 0 64 64" width="64" height="64">
-                <circle cx="32" cy="32" r="26" fill="none" stroke="#e2e8f0" stroke-width="5"/>
-                <circle cx="32" cy="32" r="26" fill="none" stroke="#10B981" stroke-width="5"
-                  stroke-dasharray="101.2 62.3" stroke-linecap="round" transform="rotate(-90 32 32)"/>
+              <svg viewBox="0 0 80 80" width="80" height="80">
+                <circle cx="40" cy="40" r="32" fill="none" stroke="#e2e8f0" stroke-width="6"/>
+                <circle cx="40" cy="40" r="32" fill="none" stroke="#10B981" stroke-width="6"
+                  stroke-dasharray="124.7 76.4" stroke-linecap="round" transform="rotate(-90 40 40)"/>
               </svg>
               <span class="mockup-ring-pct">62%</span>
             </div>
@@ -392,33 +411,38 @@ a { color: inherit; text-decoration: none; }
       <h2>このアプリですべて解決します！</h2>
       <p>引越し日を入力するだけで、あなた専用のチェックリストが自動生成されます</p>
     </div>
-    <div class="solutions-grid">
-      <div class="solution-card">
-        <img src="../assets/icons/split/01-04.png" alt="" class="solution-icon">
-        <div>
-          <h3>時系列チェックリストで漏れなく管理</h3>
-          <p>8週前〜引越し後まで、やることが時系列で自動整理。手続きの抜け漏れを防ぎます</p>
-        </div>
+    <div class="solutions-layout">
+      <div class="solutions-photo-side">
+        <img src="../assets/photos/photo_06.jpg" alt="引越しアプリで解決する家族" loading="lazy">
       </div>
-      <div class="solution-card">
-        <img src="../assets/icons/split/01-05.png" alt="" class="solution-icon">
-        <div>
-          <h3>引越し日から逆算した期限ラベル</h3>
-          <p>各タスクに「〜2週間前」などの推奨期日を明示。いつ何をすべきか一目でわかります</p>
+      <div class="solutions-grid">
+        <div class="solution-card">
+          <img src="../assets/icons/split/01-04.png" alt="" class="solution-icon">
+          <div>
+            <h3>時系列チェックリストで漏れなく管理</h3>
+            <p>8週前〜引越し後まで、やることが時系列で自動整理。手続きの抜け漏れを防ぎます</p>
+          </div>
         </div>
-      </div>
-      <div class="solution-card">
-        <img src="../assets/icons/split/03-01.png" alt="" class="solution-icon">
-        <div>
-          <h3>世帯構成パーソナライズ</h3>
-          <p>単身・カップル・ファミリーで異なるタスクを自動追加。あなたの状況に合ったリストに</p>
+        <div class="solution-card">
+          <img src="../assets/icons/split/01-05.png" alt="" class="solution-icon">
+          <div>
+            <h3>引越し日から逆算した期限ラベル</h3>
+            <p>各タスクに「〜2週間前」などの推奨期日を明示。いつ何をすべきか一目でわかります</p>
+          </div>
         </div>
-      </div>
-      <div class="solution-card">
-        <img src="../assets/icons/split/02-05.png" alt="" class="solution-icon">
-        <div>
-          <h3>PDF・印刷エクスポート対応</h3>
-          <p>チェックリストを印刷してオフラインでも活用。家族や業者との共有もスムーズ</p>
+        <div class="solution-card">
+          <img src="../assets/icons/split/03-01.png" alt="" class="solution-icon">
+          <div>
+            <h3>世帯構成パーソナライズ</h3>
+            <p>単身・カップル・ファミリーで異なるタスクを自動追加。あなたの状況に合ったリストに</p>
+          </div>
+        </div>
+        <div class="solution-card">
+          <img src="../assets/icons/split/02-05.png" alt="" class="solution-icon">
+          <div>
+            <h3>PDF・印刷エクスポート対応</h3>
+            <p>チェックリストを印刷してオフラインでも活用。家族や業者との共有もスムーズ</p>
+          </div>
         </div>
       </div>
     </div>
