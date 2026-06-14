@@ -99,7 +99,7 @@ img { max-width: 100%; height: auto; display: block; }
 .cd-unit { font-size: 16px; font-weight: 700; color: var(--primary); }
 .cd-label { font-size: 11px; color: var(--muted); margin-top: 3px; font-weight: 600; }
 .prog-row { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 700; margin-bottom: 6px; }
-.prog-pct { color: var(--accent); font-size: 16px; font-weight: 800; }
+.prog-pct { color: #f59e0b; font-size: 34px; font-weight: 800; line-height: 1; }
 .prog-bar { height: 9px; background: #d1fae5; border-radius: 5px; }
 .prog-bar-fill { height: 100%; width: 68%; background: var(--accent); border-radius: 5px; }
 .prog-detail { font-size: 11px; color: var(--muted); margin-top: 5px; }
@@ -293,12 +293,26 @@ details[open] .faq-chevron { transform: rotate(180deg); }
 .feat-card-img-wrap { margin: -28px -22px 18px; overflow: hidden; border-radius: 14px 14px 0 0; height: 138px; }
 .feat-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+/* ── Blog ── */
+.blog-sec { background: var(--light-blue); padding: 72px 0; }
+.blog-sec-head { text-align: center; margin-bottom: 44px; }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.blog-card { border-radius: 16px; overflow: hidden; border: 1.5px solid #bfdbfe; background: #fff; transition: all .2s; }
+.blog-card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: 0 8px 24px rgba(37,99,235,.14); }
+.blog-photo { width: 100%; height: 160px; object-fit: cover; }
+.blog-body { padding: 18px; }
+.blog-tag { display: inline-block; background: var(--light-blue); color: var(--primary); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 12px; margin-bottom: 8px; }
+.blog-title { font-size: 14px; font-weight: 800; color: var(--text); line-height: 1.55; margin-bottom: 8px; }
+.blog-excerpt { font-size: 12px; color: var(--muted); line-height: 1.75; }
+@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
+
 /* Trust strip stats */
 .trust-stat-num { font-size: 17px; font-weight: 800; color: #fff; line-height: 1.1; }
 .trust-stat-label { font-size: 11px; color: rgba(255,255,255,.82); margin-top: 1px; }
 
 /* Hero task card */
-.hero-card-tasks { top: 50%; right: -16px; transform: translateY(-50%); min-width: 158px; }
+.hero-card-tasks { top: 50%; right: -16px; transform: translateY(-50%); min-width: 220px; }
 .task-row { font-size: 11px; padding: 3px 0; display: flex; align-items: center; gap: 5px; color: var(--muted); }
 .task-row.done { color: var(--accent-dark); text-decoration: line-through; }
 .task-row.todo { color: var(--primary); font-weight: 700; }
@@ -374,19 +388,26 @@ details[open] .faq-chevron { transform: rotate(180deg); }
           <img src="../assets/icons/split/01-05.png" alt="" style="width:28px;height:28px;margin:6px auto 0;object-fit:contain;">
         </div>
         <div class="hero-overlay-card hero-card-prog">
-          <div class="prog-row">
-            <span style="color:var(--text);">進捗</span>
+          <div style="font-size:10px;color:var(--muted);font-weight:600;margin-bottom:2px;">準備完了率</div>
+          <div class="prog-row" style="align-items:flex-end;gap:6px;">
             <span class="prog-pct">68%</span>
+            <span style="font-size:10px;color:#f59e0b;font-weight:700;padding-bottom:5px;">達成！</span>
           </div>
-          <div class="prog-bar"><div class="prog-bar-fill"></div></div>
+          <div class="prog-bar"><div class="prog-bar-fill" style="background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div></div>
           <div class="prog-detail">17 / 25 タスク完了</div>
         </div>
         <div class="hero-overlay-card hero-card-tasks">
-          <div style="font-size:10px;font-weight:800;color:var(--text);margin-bottom:7px;padding-bottom:5px;border-bottom:1px solid var(--border);">📋 今週のタスク</div>
-          <div class="task-row done">引越し業者の予約</div>
-          <div class="task-row done">転出届の提出</div>
-          <div class="task-row todo">→ 電気・ガス停止連絡</div>
-          <div class="task-row todo">→ 荷造り開始</div>
+          <div style="background:var(--primary);color:#fff;margin:-14px -18px 10px;padding:9px 14px;border-radius:10px 10px 0 0;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:space-between;">
+            <span>📋 ToDoリスト</span>
+            <span style="background:rgba(255,255,255,.2);padding:1px 7px;border-radius:8px;font-size:10px;">68%</span>
+          </div>
+          <div style="height:4px;background:#e2e8f0;border-radius:2px;margin-bottom:6px;"><div style="height:100%;width:68%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:2px;"></div></div>
+          <div style="font-size:10px;color:var(--muted);margin-bottom:8px;display:flex;justify-content:space-between;"><span>17/25件完了</span><span style="color:var(--accent);font-weight:700;">残8件</span></div>
+          <div class="task-row done"><span style="color:var(--accent);font-weight:800;margin-right:4px;flex-shrink:0;">✓</span>引越し業者の予約</div>
+          <div class="task-row done"><span style="color:var(--accent);font-weight:800;margin-right:4px;flex-shrink:0;">✓</span>転出届の提出</div>
+          <div class="task-row done"><span style="color:var(--accent);font-weight:800;margin-right:4px;flex-shrink:0;">✓</span>電気会社への連絡</div>
+          <div class="task-row todo"><span style="display:inline-block;width:13px;height:13px;border:2px solid #cbd5e1;border-radius:3px;margin-right:4px;flex-shrink:0;"></span>ガス停止申込</div>
+          <div class="task-row todo"><span style="display:inline-block;width:13px;height:13px;border:2px solid #cbd5e1;border-radius:3px;margin-right:4px;flex-shrink:0;"></span>荷造り開始</div>
         </div>
       </div>
     </div>
@@ -823,6 +844,43 @@ details[open] .faq-chevron { transform: rotate(180deg); }
           </div>
         </div>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- Blog / Related Articles -->
+<section class="blog-sec" id="blog">
+  <div class="wrap">
+    <div class="blog-sec-head">
+      <span class="sec-label">お役立ち記事</span>
+      <h2 class="sec-title">引越し準備に役立つ<em style="color:var(--primary);">コラム</em></h2>
+      <p class="sec-sub" style="max-width:560px;margin:0 auto;">引越し経験者が実際に困ったことや知っておくべき情報をまとめました。</p>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <img src="../assets/photos/photo_06.jpg" alt="引越し手続き完全ガイド" class="blog-photo" loading="lazy">
+        <div class="blog-body">
+          <span class="blog-tag">手続きガイド</span>
+          <h3 class="blog-title">引越し手続き完全チェックリスト｜役所・ライフライン・住所変更まとめ</h3>
+          <p class="blog-excerpt">役所への転出届・転入届、電気・ガス・水道の手続き、インターネット移転まで時系列で解説します。</p>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="../assets/photos/photo_07.jpg" alt="引越し業者の選び方" class="blog-photo" loading="lazy">
+        <div class="blog-body">
+          <span class="blog-tag">費用・業者</span>
+          <h3 class="blog-title">引越し業者の選び方と費用を抑えるコツ｜見積もり比較のポイント</h3>
+          <p class="blog-excerpt">単身・ファミリー別の費用相場と、業者選びで失敗しない見積もり比較のポイントを解説します。</p>
+        </div>
+      </article>
+      <article class="blog-card">
+        <img src="../assets/photos/photo_08.jpg" alt="引越し荷造りのコツ" class="blog-photo" loading="lazy">
+        <div class="blog-body">
+          <span class="blog-tag">荷造りのコツ</span>
+          <h3 class="blog-title">引越し荷造りのコツと順番｜段ボールの詰め方・梱包材の選び方</h3>
+          <p class="blog-excerpt">荷造りを効率よく進める順番と、割れ物・家具・衣類の正しい梱包方法を具体的に説明します。</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
