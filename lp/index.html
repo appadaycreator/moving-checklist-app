@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-TXQGZRF9");</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563EB">
+<title>引越しToDoリスト・チェックアプリ【無料】引越し日から逆算して手続きを自動管理</title>
+<meta name="description" content="引越し日を入力するだけで手続きを時系列チェックリストで管理。カウントダウン・進捗グラフ・カスタムタスク追加対応の無料Webツール。単身・家族・ペットにも対応。">
+<link rel="canonical" href="https://appadaycreator.com/moving-checklist-app/lp/">
+<meta property="og:title" content="引越しToDoリスト・チェックアプリ【無料】引越し日から逆算して手続きを自動管理">
+<meta property="og:description" content="引越し日を入力するだけで手続きを時系列チェックリストで管理。カウントダウン・進捗グラフ・カスタムタスク追加対応の無料Webツール。">
+<meta property="og:url" content="https://appadaycreator.com/moving-checklist-app/lp/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://appadaycreator.com/moving-checklist-app/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="引越しToDoリスト・チェックアプリ【無料】">
+<meta name="twitter:description" content="引越し日入力だけで手続きを自動管理。無料Webツール。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8427583028015858" crossorigin="anonymous"></script>
+<style>
+:root {
+  --primary: #2563EB;
+  --primary-dark: #1d4ed8;
+  --accent: #10B981;
+  --accent-dark: #059669;
+  --text: #1e293b;
+  --muted: #64748b;
+  --light-bg: #EFF6FF;
+  --border: #e2e8f0;
+  --white: #ffffff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', sans-serif; color: var(--text); line-height: 1.7; background: #fff; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ── Layout ── */
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section-header { text-align: center; margin-bottom: 48px; }
+.section-header h2 { font-size: clamp(22px, 4vw, 34px); font-weight: 800; color: var(--text); }
+.section-header p { margin-top: 12px; color: var(--muted); font-size: 15px; }
+.section-label { display: inline-block; background: var(--light-bg); color: var(--primary); font-size: 12px; font-weight: 700; letter-spacing: .08em; padding: 4px 14px; border-radius: 20px; margin-bottom: 12px; }
+
+/* ── Buttons ── */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 13px 28px; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all .2s; border: none; white-space: nowrap; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: var(--accent-dark); }
+.btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+.btn-outline:hover { background: var(--light-bg); }
+.btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.7); }
+.btn-outline-white:hover { background: rgba(255,255,255,.1); }
+.btn-lg { padding: 16px 36px; font-size: 16px; border-radius: 12px; }
+.btn-xl { padding: 18px 48px; font-size: 18px; border-radius: 14px; box-shadow: 0 4px 20px rgba(16,185,129,.4); }
+
+/* ── Header ── */
+.header { background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.08); position: sticky; top: 0; z-index: 200; }
+.header-wrap { max-width: 1100px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 20px; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-icon { width: 36px; height: 36px; object-fit: contain; }
+.logo-text { line-height: 1.2; }
+.logo-title { font-size: 14px; font-weight: 800; color: var(--text); }
+.logo-sub { font-size: 10px; color: var(--muted); font-weight: 500; }
+.header-nav { display: flex; gap: 24px; margin-left: auto; }
+.header-nav a { font-size: 13px; font-weight: 500; color: var(--muted); transition: color .2s; }
+.header-nav a:hover { color: var(--primary); }
+.header-cta { background: var(--primary); color: #fff; padding: 9px 20px; border-radius: 8px; font-size: 13px; font-weight: 700; transition: background .2s; }
+.header-cta:hover { background: var(--primary-dark); }
+
+/* ── Hero ── */
+.hero { position: relative; min-height: 600px; display: flex; align-items: center; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(120deg, rgba(15,30,70,.82) 0%, rgba(37,99,235,.65) 55%, rgba(16,185,129,.3) 100%); z-index: 1; }
+.hero-wrap { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 60px 20px; display: grid; grid-template-columns: 1fr 420px; gap: 40px; align-items: center; }
+.hero-badge { display: inline-block; background: rgba(16,185,129,.25); color: #6ee7b7; border: 1px solid rgba(16,185,129,.4); font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-bottom: 16px; }
+.hero-h1 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; color: #fff; line-height: 1.25; margin-bottom: 18px; }
+.hero-sub { font-size: 15px; color: rgba(255,255,255,.88); line-height: 1.8; margin-bottom: 28px; max-width: 480px; }
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+.hero-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.hero-pill { background: rgba(255,255,255,.15); color: rgba(255,255,255,.9); border: 1px solid rgba(255,255,255,.3); font-size: 12px; font-weight: 600; padding: 5px 14px; border-radius: 20px; }
+
+/* App Mockup */
+.app-mockup { background: #fff; border-radius: 18px; box-shadow: 0 20px 60px rgba(0,0,0,.35); overflow: hidden; }
+.mockup-topbar { background: var(--primary); color: #fff; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; font-weight: 700; }
+.mockup-progress-badge { background: rgba(255,255,255,.25); padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+.mockup-body { padding: 20px 16px; }
+.mockup-countdown-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; background: var(--light-bg); border-radius: 12px; padding: 16px; }
+.mockup-days { font-size: 52px; font-weight: 800; color: var(--primary); line-height: 1; }
+.mockup-days-info { font-size: 12px; color: var(--muted); }
+.mockup-days-label { font-size: 16px; font-weight: 700; color: var(--text); }
+.mockup-progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.mockup-ring { position: relative; width: 64px; height: 64px; flex-shrink: 0; }
+.mockup-ring svg { transform: rotate(-90deg); }
+.mockup-ring-pct { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: var(--accent); }
+.mockup-progress-info { flex: 1; }
+.mockup-progress-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+.mockup-progress-bar { height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+.mockup-progress-fill { height: 100%; background: var(--accent); border-radius: 4px; width: 62%; }
+.mockup-tasks { display: flex; flex-direction: column; gap: 6px; }
+.mockup-task { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text); padding: 6px 8px; border-radius: 6px; background: #f8fafc; }
+.mockup-task.done { color: var(--muted); }
+.mockup-task.done span { text-decoration: line-through; }
+.mockup-check { width: 16px; height: 16px; border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; }
+.mockup-check.done { background: var(--accent); color: #fff; }
+.mockup-check.todo { border: 2px solid #e2e8f0; }
+
+/* ── Problems ── */
+.problems-section { padding: 80px 0; background: var(--light-bg); }
+.problems-grid { display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: center; }
+.problems-list { display: flex; flex-direction: column; gap: 18px; }
+.problem-item { display: flex; align-items: flex-start; gap: 14px; background: #fff; padding: 18px 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+.problem-arrow { width: 28px; height: 28px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+.problem-text { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.5; }
+.problems-photo-wrap { border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.12); }
+.problems-photo-wrap img { width: 100%; height: 320px; object-fit: cover; }
+
+/* ── Solutions ── */
+.solutions-section { padding: 80px 0; background: var(--primary); }
+.solutions-section .section-header h2 { color: #fff; }
+.solutions-section .section-header p { color: rgba(255,255,255,.8); }
+.solutions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.solution-card { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); border-radius: 14px; padding: 24px; display: flex; align-items: flex-start; gap: 14px; transition: background .2s; }
+.solution-card:hover { background: rgba(255,255,255,.18); }
+.solution-icon { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; }
+.solution-card h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.solution-card p { font-size: 13px; color: rgba(255,255,255,.8); line-height: 1.6; }
+
+/* ── Features ── */
+.features-section { padding: 80px 0; background: #fff; }
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.feature-card { background: #f8fafc; border-radius: 16px; padding: 28px 24px; transition: transform .2s, box-shadow .2s; text-align: center; }
+.feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(37,99,235,.12); }
+.feature-icon { width: 56px; height: 56px; object-fit: contain; margin: 0 auto 16px; }
+.feature-card h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+.feature-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+/* ── Steps ── */
+.steps-section { padding: 80px 0; background: #f8fafc; }
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; position: relative; }
+.steps-grid::before { content: ''; position: absolute; top: 72px; left: 33%; right: 33%; height: 2px; background: repeating-linear-gradient(90deg, var(--primary) 0px, var(--primary) 8px, transparent 8px, transparent 16px); pointer-events: none; }
+.step-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.07); position: relative; }
+.step-num-badge { position: absolute; top: 12px; left: 12px; z-index: 10; background: var(--primary); color: #fff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; box-shadow: 0 2px 8px rgba(37,99,235,.4); }
+.step-photo { width: 100%; height: 180px; object-fit: cover; }
+.step-body { padding: 20px; }
+.step-body h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.step-body p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+/* ── Personas ── */
+.personas-section { padding: 80px 0; background: #fff; }
+.personas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.persona-card { background: #f8fafc; border-radius: 16px; overflow: hidden; text-align: center; transition: transform .2s, box-shadow .2s; }
+.persona-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,.1); }
+.persona-photo { width: 100%; height: 160px; object-fit: cover; }
+.persona-icon-wrap { width: 100%; height: 160px; background: var(--light-bg); display: flex; align-items: center; justify-content: center; }
+.persona-icon { width: 80px; height: 80px; object-fit: contain; }
+.persona-body { padding: 18px 16px; }
+.persona-body h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.persona-body p { font-size: 12px; color: var(--muted); line-height: 1.7; }
+
+/* ── Screenshots ── */
+.screenshots-section { padding: 80px 0; background: #f1f5f9; }
+.screenshots-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+.screenshot-wrap { text-align: center; }
+.mockup-frame { background: #1e293b; border-radius: 20px; padding: 16px; box-shadow: 0 16px 48px rgba(0,0,0,.2); margin-bottom: 16px; }
+.mockup-screen { background: #fff; border-radius: 12px; padding: 16px; min-height: 280px; }
+.mini-app-header { background: var(--primary); color: #fff; padding: 10px 14px; border-radius: 8px 8px 0 0; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: space-between; }
+.mini-progress-chip { background: rgba(255,255,255,.25); font-size: 10px; padding: 2px 8px; border-radius: 10px; }
+.mini-countdown-display { background: var(--light-bg); border-radius: 0 0 8px 8px; padding: 16px; display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.mini-days-num { font-size: 40px; font-weight: 800; color: var(--primary); line-height: 1; }
+.mini-days-text { font-size: 11px; color: var(--muted); }
+.mini-prog-bar-outer { height: 10px; background: #e2e8f0; border-radius: 5px; overflow: hidden; margin-bottom: 12px; }
+.mini-prog-bar-fill { height: 100%; background: var(--accent); border-radius: 5px; }
+.mini-task-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid #f1f5f9; font-size: 11px; }
+.mini-task-row:last-child { border-bottom: none; }
+.mini-checkbox { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+.mini-checkbox.done { background: var(--accent); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 9px; }
+.mini-checkbox.todo { border: 1.5px solid #cbd5e1; }
+.mini-task-text { color: var(--text); }
+.mini-task-text.done { color: var(--muted); text-decoration: line-through; }
+
+.mini-custom-section { margin-top: 10px; }
+.mini-section-title { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.mini-input-area { display: flex; gap: 6px; margin-bottom: 10px; }
+.mini-input-field { flex: 1; border: 1.5px solid #e2e8f0; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: var(--muted); }
+.mini-add-btn { background: var(--accent); color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+.mini-templates { display: flex; gap: 6px; flex-wrap: wrap; }
+.mini-tag { background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 20px; padding: 4px 10px; font-size: 10px; color: var(--muted); }
+
+.screenshot-caption { font-size: 14px; font-weight: 600; color: var(--muted); margin-top: 12px; }
+
+/* ── FAQ ── */
+.faq-section { padding: 80px 0; background: #fff; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 760px; margin: 0 auto; }
+.faq-item { border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; }
+.faq-item summary { padding: 18px 20px; font-size: 15px; font-weight: 700; color: var(--text); cursor: pointer; display: flex; align-items: center; justify-content: space-between; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; font-size: 20px; color: var(--primary); flex-shrink: 0; }
+.faq-item[open] summary::after { content: '−'; }
+.faq-item[open] summary { border-bottom: 1px solid var(--border); background: var(--light-bg); }
+.faq-answer { padding: 16px 20px; font-size: 14px; color: var(--muted); line-height: 1.8; }
+
+/* ── Final CTA ── */
+.final-cta { padding: 80px 20px; background: linear-gradient(135deg, #1e3a8a 0%, #2563EB 50%, #059669 100%); text-align: center; }
+.final-cta h2 { font-size: clamp(22px, 4vw, 36px); font-weight: 800; color: #fff; margin-bottom: 16px; }
+.final-cta p { font-size: 15px; color: rgba(255,255,255,.85); margin-bottom: 36px; }
+.final-cta-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+.final-badge { background: rgba(255,255,255,.15); color: rgba(255,255,255,.9); border: 1px solid rgba(255,255,255,.3); font-size: 12px; font-weight: 600; padding: 5px 14px; border-radius: 20px; }
+
+/* ── Footer ── */
+.footer { background: #1e293b; color: #94a3b8; padding: 40px 20px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-logo { font-size: 14px; font-weight: 700; color: #e2e8f0; margin-bottom: 16px; }
+.footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.footer-links a { font-size: 13px; color: #94a3b8; transition: color .2s; }
+.footer-links a:hover { color: #e2e8f0; }
+.footer-copy { font-size: 12px; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .header-nav { display: none; }
+  .hero-wrap { grid-template-columns: 1fr; }
+  .app-mockup { display: none; }
+  .problems-grid { grid-template-columns: 1fr; }
+  .solutions-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid { grid-template-columns: 1fr; }
+  .steps-grid::before { display: none; }
+  .personas-grid { grid-template-columns: repeat(2, 1fr); }
+  .screenshots-grid { grid-template-columns: 1fr; }
+  .hero-ctas { flex-direction: column; }
+  .btn-lg { width: 100%; text-align: center; }
+}
+@media (max-width: 480px) {
+  .features-grid { grid-template-columns: 1fr; }
+  .personas-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-h1 { font-size: 26px; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"引越しToDoリスト・チェックアプリ","url":"https://appadaycreator.com/moving-checklist-app/","description":"引越し日を入力するだけで手続きを時系列チェックリストで管理。カウントダウン・進捗グラフ・カスタムタスク追加対応の無料Webツール。","applicationCategory":"UtilityApplication","operatingSystem":"Any","inLanguage":"ja","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"}}</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-wrap">
+    <a class="logo" href="/moving-checklist-app/">
+      <img src="../assets/icons/split/01-01.png" alt="引越しアプリ" class="logo-icon">
+      <div class="logo-text">
+        <div class="logo-title">引越しToDoリスト</div>
+        <div class="logo-sub">チェックアプリ（無料）</div>
+      </div>
+    </a>
+    <nav class="header-nav">
+      <a href="#features">特徴</a>
+      <a href="#steps">使い方</a>
+      <a href="#personas">こんな方に</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+    <a href="/moving-checklist-app/" class="header-cta">引越し日を入力する</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img src="../assets/photos/photo_01.jpg" alt="引越し準備のイメージ">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-wrap">
+    <div class="hero-left">
+      <span class="hero-badge">📦 もちろん、ずっと無料で使えます！</span>
+      <h1 class="hero-h1">引越しToDoリスト・<br>チェックアプリ【無料】</h1>
+      <p class="hero-sub">引越し日を入力するだけで、手続きを時系列チェックリストで自動管理。カウントダウン・進捗グラフ・世帯構成パーソナライズ・カスタムタスク対応の無料Webツール。</p>
+      <div class="hero-ctas">
+        <a href="/moving-checklist-app/" class="btn btn-accent btn-lg">引越し日を入力する →</a>
+        <a href="#steps" class="btn btn-outline-white btn-lg">使い方を見る</a>
+      </div>
+      <div class="hero-pills">
+        <span class="hero-pill">📄 PDF出力可</span>
+        <span class="hero-pill">✅ 無料で使える</span>
+        <span class="hero-pill">🔒 登録不要</span>
+        <span class="hero-pill">📱 スマホ対応</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="app-mockup">
+        <div class="mockup-topbar">
+          <span>📦 引越しToDoリスト</span>
+          <span class="mockup-progress-badge">進捗 62%</span>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-countdown-row">
+            <div>
+              <div class="mockup-days">28</div>
+            </div>
+            <div>
+              <div class="mockup-days-label">日後に引越し</div>
+              <div class="mockup-days-info">2026年8月15日</div>
+            </div>
+          </div>
+          <div class="mockup-progress-row">
+            <div class="mockup-ring">
+              <svg viewBox="0 0 64 64" width="64" height="64">
+                <circle cx="32" cy="32" r="26" fill="none" stroke="#e2e8f0" stroke-width="5"/>
+                <circle cx="32" cy="32" r="26" fill="none" stroke="#10B981" stroke-width="5"
+                  stroke-dasharray="101.2 62.3" stroke-linecap="round" transform="rotate(-90 32 32)"/>
+              </svg>
+              <span class="mockup-ring-pct">62%</span>
+            </div>
+            <div class="mockup-progress-info">
+              <div class="mockup-progress-label">完了 13 / 21件</div>
+              <div class="mockup-progress-bar">
+                <div class="mockup-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-tasks">
+            <div class="mockup-task done">
+              <div class="mockup-check done">✓</div>
+              <span>引越し業者を決定</span>
+            </div>
+            <div class="mockup-task done">
+              <div class="mockup-check done">✓</div>
+              <span>転出届を提出</span>
+            </div>
+            <div class="mockup-task">
+              <div class="mockup-check todo"></div>
+              <span>電気・ガス停止申込</span>
+            </div>
+            <div class="mockup-task">
+              <div class="mockup-check todo"></div>
+              <span>郵便局の転送届</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Problems -->
+<section class="problems-section" id="problems">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-label">こんなお悩み、ありませんか？</span>
+      <h2>引越し準備で<br>こんな悩みを抱えていませんか？</h2>
+    </div>
+    <div class="problems-grid">
+      <div class="problems-list">
+        <div class="problem-item">
+          <div class="problem-arrow">→</div>
+          <p class="problem-text">何から手続きをすれば良いか分からない</p>
+        </div>
+        <div class="problem-item">
+          <div class="problem-arrow">→</div>
+          <p class="problem-text">重要な手続きの期限を忘れてしまいそう</p>
+        </div>
+        <div class="problem-item">
+          <div class="problem-arrow">→</div>
+          <p class="problem-text">引越し業者の比較・選び方が分からない</p>
+        </div>
+        <div class="problem-item">
+          <div class="problem-arrow">→</div>
+          <p class="problem-text">ペット・楽器など特殊な引越しの注意点がわからない</p>
+        </div>
+        <div class="problem-item">
+          <div class="problem-arrow">→</div>
+          <p class="problem-text">進捗が把握しにくく準備が追いつかなくなる</p>
+        </div>
+      </div>
+      <div class="problems-photo-wrap">
+        <img src="../assets/photos/photo_02.jpg" alt="引越し準備に悩む方" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solutions -->
+<section class="solutions-section">
+  <div class="wrap">
+    <div class="section-header">
+      <h2>このアプリですべて解決します！</h2>
+      <p>引越し日を入力するだけで、あなた専用のチェックリストが自動生成されます</p>
+    </div>
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <img src="../assets/icons/split/01-04.png" alt="" class="solution-icon">
+        <div>
+          <h3>時系列チェックリストで漏れなく管理</h3>
+          <p>8週前〜引越し後まで、やることが時系列で自動整理。手続きの抜け漏れを防ぎます</p>
+        </div>
+      </div>
+      <div class="solution-card">
+        <img src="../assets/icons/split/01-05.png" alt="" class="solution-icon">
+        <div>
+          <h3>引越し日から逆算した期限ラベル</h3>
+          <p>各タスクに「〜2週間前」などの推奨期日を明示。いつ何をすべきか一目でわかります</p>
+        </div>
+      </div>
+      <div class="solution-card">
+        <img src="../assets/icons/split/03-01.png" alt="" class="solution-icon">
+        <div>
+          <h3>世帯構成パーソナライズ</h3>
+          <p>単身・カップル・ファミリーで異なるタスクを自動追加。あなたの状況に合ったリストに</p>
+        </div>
+      </div>
+      <div class="solution-card">
+        <img src="../assets/icons/split/02-05.png" alt="" class="solution-icon">
+        <div>
+          <h3>PDF・印刷エクスポート対応</h3>
+          <p>チェックリストを印刷してオフラインでも活用。家族や業者との共有もスムーズ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features-section" id="features">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-label">主な機能</span>
+      <h2>引越し準備をサポートする<br>6つの主な機能</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <img src="../assets/icons/split/02-02.png" alt="" class="feature-icon">
+        <h3>引越し日カウントダウン</h3>
+        <p>引越し日までの残り日数を大きく表示。進捗グラフでリアルタイム状況を把握できます</p>
+      </div>
+      <div class="feature-card">
+        <img src="../assets/icons/split/02-05.png" alt="" class="feature-icon">
+        <h3>PDF・印刷エクスポート</h3>
+        <p>チェックリストをPDF保存や印刷に対応。オフライン環境でも手続き管理ができます</p>
+      </div>
+      <div class="feature-card">
+        <img src="../assets/icons/split/01-04.png" alt="" class="feature-icon">
+        <h3>やることリスト管理</h3>
+        <p>8週前〜引越し後まで時系列でタスクを整理。完了済みは自動折りたたみで見やすく</p>
+      </div>
+      <div class="feature-card">
+        <img src="../assets/icons/split/03-01.png" alt="" class="feature-icon">
+        <h3>世帯構成パーソナライズ</h3>
+        <p>単身・カップル・ファミリーで必要なタスクを自動追加する個人特化型チェックリスト</p>
+      </div>
+      <div class="feature-card">
+        <img src="../assets/icons/split/04-03.png" alt="" class="feature-icon">
+        <h3>カスタムタスク追加</h3>
+        <p>ペット連れ・楽器・車ありなどシーン別テンプレートで個人のニーズに対応できます</p>
+      </div>
+      <div class="feature-card">
+        <img src="../assets/icons/split/04-06.png" alt="" class="feature-icon">
+        <h3>X/LINEシェア機能</h3>
+        <p>X(Twitter)・LINEでチェックリストをシェア。家族と引越し情報を共有できます</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Steps -->
+<section class="steps-section" id="steps">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-label">使い方</span>
+      <h2>使い方はとっても簡単！3ステップ</h2>
+      <p>引越し日を入力するだけですぐ始められます</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num-badge">1</div>
+        <img src="../assets/photos/photo_03.jpg" alt="引越し日を入力する" class="step-photo" loading="lazy">
+        <div class="step-body">
+          <h3>引越し日を入力する</h3>
+          <p>引越し予定日・世帯構成・引越し種類を入力。「チェックリストを作成」ボタンを押すだけで個人専用リストが完成</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num-badge">2</div>
+        <img src="../assets/photos/photo_04.jpg" alt="チェックリストを確認" class="step-photo" loading="lazy">
+        <div class="step-body">
+          <h3>チェックリストを確認・計画</h3>
+          <p>時系列で整理されたタスクと期限ラベルを確認。カスタムタスクを追加して完全個人特化型に仕上げる</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num-badge">3</div>
+        <img src="../assets/photos/photo_05.jpg" alt="チェックしながら進める" class="step-photo" loading="lazy">
+        <div class="step-body">
+          <h3>チェックしながら準備を進める</h3>
+          <p>手続きが完了したらチェック。進捗グラフで全体の状況を把握しながらスムーズに引越し準備を完了</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Personas -->
+<section class="personas-section" id="personas">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-label">こんな方にもすすめ</span>
+      <h2>あなたの引越しシーンに合わせて<br>最適なチェックリストを自動生成</h2>
+    </div>
+    <div class="personas-grid">
+      <div class="persona-card">
+        <div class="persona-icon-wrap">
+          <img src="../assets/icons/split/02-06.png" alt="単身者" class="persona-icon">
+        </div>
+        <div class="persona-body">
+          <h3>単身者</h3>
+          <p>はじめての一人暮らしや転勤引越しに。単身向けのコンパクトなタスクリストを自動生成</p>
+        </div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon-wrap">
+          <img src="../assets/icons/split/02-07.png" alt="カップル・夫婦" class="persona-icon">
+        </div>
+        <div class="persona-body">
+          <h3>カップル・夫婦</h3>
+          <p>結婚・同棲引越しに。婚姻届・住民票の統合など2人世帯特有の手続きも網羅</p>
+        </div>
+      </div>
+      <div class="persona-card">
+        <img src="../assets/photos/photo_06.jpg" alt="ファミリー" class="persona-photo" loading="lazy">
+        <div class="persona-body">
+          <h3>ファミリー</h3>
+          <p>子どもがいる家族の引越しに。転校・転園手続きや子ども向けタスクも自動追加</p>
+        </div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon-wrap">
+          <img src="../assets/icons/split/03-02.png" alt="ペット連れ" class="persona-icon">
+        </div>
+        <div class="persona-body">
+          <h3>ペット連れ</h3>
+          <p>ペット可物件の確認やペット預け先・動物病院の移転などをカスタムタスクで管理</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Screenshots -->
+<section class="screenshots-section">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-label">アプリ画面</span>
+      <h2>アプリ画面をチェック！</h2>
+      <p>シンプルで使いやすいデザインで引越し準備をサポート</p>
+    </div>
+    <div class="screenshots-grid">
+      <div class="screenshot-wrap">
+        <div class="mockup-frame">
+          <div class="mockup-screen">
+            <div class="mini-app-header">
+              <span>📦 引越しToDoリスト</span>
+              <span class="mini-progress-chip">進捗 62%</span>
+            </div>
+            <div class="mini-countdown-display">
+              <div class="mini-days-num">28</div>
+              <div>
+                <div style="font-size:11px;font-weight:700;color:#1e293b;">日後に引越し</div>
+                <div class="mini-days-text">2026年8月15日</div>
+              </div>
+            </div>
+            <div class="mini-prog-bar-outer"><div class="mini-prog-bar-fill" style="width:62%"></div></div>
+            <div class="mini-task-row">
+              <div class="mini-checkbox done">✓</div>
+              <span class="mini-task-text done">引越し業者を決定</span>
+            </div>
+            <div class="mini-task-row">
+              <div class="mini-checkbox done">✓</div>
+              <span class="mini-task-text done">転出届を提出</span>
+            </div>
+            <div class="mini-task-row">
+              <div class="mini-checkbox todo"></div>
+              <span class="mini-task-text">電気・ガス停止申込</span>
+            </div>
+            <div class="mini-task-row">
+              <div class="mini-checkbox todo"></div>
+              <span class="mini-task-text">郵便局の転送届</span>
+            </div>
+          </div>
+        </div>
+        <p class="screenshot-caption">進捗グラフでモチベーションをキープ</p>
+      </div>
+      <div class="screenshot-wrap">
+        <div class="mockup-frame">
+          <div class="mockup-screen">
+            <div class="mini-app-header">
+              <span>カスタムタスク追加</span>
+            </div>
+            <div style="padding:14px 0;">
+              <div class="mini-custom-section">
+                <div class="mini-section-title">タスクを追加する</div>
+                <div class="mini-input-area">
+                  <div class="mini-input-field">タスクを入力...</div>
+                  <div class="mini-add-btn">追加</div>
+                </div>
+                <div class="mini-section-title" style="margin-bottom:6px;">シーン別テンプレート</div>
+                <div class="mini-templates">
+                  <span class="mini-tag">🐾 ペット連れ</span>
+                  <span class="mini-tag">🎵 楽器あり</span>
+                  <span class="mini-tag">🚗 車あり</span>
+                  <span class="mini-tag">🛋️ 大型家具</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="screenshot-caption">シーン別テンプレートで個人特化型チェックリストに</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-label">よくある質問</span>
+      <h2>よくある質問</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>完全無料で使えますか？</summary>
+        <div class="faq-answer">はい、完全無料・登録不要です。ブラウザから直接ご利用いただけます。アカウント作成やメールアドレスの登録も一切不要です。</div>
+      </details>
+      <details class="faq-item">
+        <summary>スマートフォンでも使えますか？</summary>
+        <div class="faq-answer">はい、スマートフォン・タブレット・PCすべてに対応したレスポンシブデザインです。外出先からもチェックできます。</div>
+      </details>
+      <details class="faq-item">
+        <summary>チェックした内容は保存されますか？</summary>
+        <div class="faq-answer">はい、ブラウザのlocalStorageに自動保存されます。同じブラウザで再度アクセスすると続きから再開できます。ただしブラウザのデータをクリアすると削除されます。</div>
+      </details>
+      <details class="faq-item">
+        <summary>印刷やPDF保存はできますか？</summary>
+        <div class="faq-answer">はい、「PDF/印刷」ボタンからブラウザの印刷機能を使ってPDF保存や印刷ができます。Chromeの場合は「PDFとして保存」を選択してください。</div>
+      </details>
+      <details class="faq-item">
+        <summary>ペットや楽器など特殊な引越しにも対応していますか？</summary>
+        <div class="faq-answer">カスタムタスク追加機能から「ペット連れ」「楽器あり」「車あり」などのテンプレートを使って、個人特化型のチェックリストを作れます。標準チェックリストにはない項目を自由に追加できます。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2>引越し準備を、もっとカンタンに。<br>今すぐ無料で始めましょう！</h2>
+    <p>登録不要・完全無料。引越し日を入力するだけで始められます。</p>
+    <a href="/moving-checklist-app/" class="btn btn-accent btn-xl">引越し日を入力する →</a>
+    <div class="final-cta-badges">
+      <span class="final-badge">📄 PDF出力可</span>
+      <span class="final-badge">✅ 完全無料</span>
+      <span class="final-badge">🔒 登録不要</span>
+      <span class="final-badge">📱 スマホ対応</span>
+    </div>
+  </div>
+</section>
+
+<!-- Affiliate -->
+<div style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:16px 20px;text-align:center;">
+  <p style="font-size:11px;font-weight:600;color:#94a3b8;margin-bottom:10px;">スポンサーリンク</p>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:700px;margin:0 auto;">
+    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ5+C2OQY2+14CS+68EPE" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;">【じゃらん】国内25,000軒の宿をネットで予約OK！2％ポイント還元！</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B3WJ5+C2OQY2+14CS+68EPE" alt="">
+    <a href="https://px.a8.net/svt/ejp?a8mat=4B3WJ6+FQ9JMY+1LP8+BY642" rel="nofollow noopener noreferrer" target="_blank" style="display:inline-block;padding:5px 12px;background:#fff;border:1px solid #d1d5db;border-radius:20px;font-size:12px;color:#4b5563;text-decoration:none;">日々の生活にハッピーをプラス！《ハピタス》</a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B3WJ6+FQ9JMY+1LP8+BY642" alt="">
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">📦 引越しToDoリスト・チェックアプリ（無料）</div>
+    <div class="footer-links">
+      <a href="/moving-checklist-app/">サービストップ</a>
+      <a href="https://appadaycreator.com/">AppADayCreator</a>
+      <a href="../privacy-policy.html">プライバシーポリシー</a>
+      <a href="../terms.html">利用規約</a>
+      <a href="../contact.html">お問い合わせ</a>
+    </div>
+    <p class="footer-copy">© 2026 AppADayCreator / Tech&amp;Brace. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
