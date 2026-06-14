@@ -129,7 +129,7 @@ img { max-width: 100%; height: auto; display: block; }
 .target-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .target-card { border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.08); border: 1.5px solid var(--border); transition: transform .2s; }
 .target-card:hover { transform: translateY(-4px); }
-.target-photo { width: 100%; height: 200px; object-fit: cover; }
+.target-photo { width: 100%; height: 260px; object-fit: cover; }
 .target-body { padding: 20px; }
 .target-icon-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 .target-icon { width: 36px; height: 36px; object-fit: contain; }
@@ -286,7 +286,22 @@ details[open] .faq-chevron { transform: rotate(180deg); }
   .aff-inner { flex-direction: column; align-items: flex-start; }
   .hero-card-cd { top: 8px; right: 8px; }
   .hero-card-prog { bottom: 8px; left: 8px; }
+  .hero-card-tasks { display: none; }
 }
+
+/* Feature card photo header */
+.feat-card-img-wrap { margin: -28px -22px 18px; overflow: hidden; border-radius: 14px 14px 0 0; height: 138px; }
+.feat-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Trust strip stats */
+.trust-stat-num { font-size: 17px; font-weight: 800; color: #fff; line-height: 1.1; }
+.trust-stat-label { font-size: 11px; color: rgba(255,255,255,.82); margin-top: 1px; }
+
+/* Hero task card */
+.hero-card-tasks { top: 50%; right: -16px; transform: translateY(-50%); min-width: 158px; }
+.task-row { font-size: 11px; padding: 3px 0; display: flex; align-items: center; gap: 5px; color: var(--muted); }
+.task-row.done { color: var(--accent-dark); text-decoration: line-through; }
+.task-row.todo { color: var(--primary); font-weight: 700; }
 </style>
 </head>
 <body>
@@ -366,25 +381,36 @@ details[open] .faq-chevron { transform: rotate(180deg); }
           <div class="prog-bar"><div class="prog-bar-fill"></div></div>
           <div class="prog-detail">17 / 25 タスク完了</div>
         </div>
+        <div class="hero-overlay-card hero-card-tasks">
+          <div style="font-size:10px;font-weight:800;color:var(--text);margin-bottom:7px;padding-bottom:5px;border-bottom:1px solid var(--border);">📋 今週のタスク</div>
+          <div class="task-row done">引越し業者の予約</div>
+          <div class="task-row done">転出届の提出</div>
+          <div class="task-row todo">→ 電気・ガス停止連絡</div>
+          <div class="task-row todo">→ 荷造り開始</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Trust Strip -->
-<div class="trust-strip">
+<div class="trust-strip" style="padding:18px 0;">
   <div class="trust-strip-inner">
     <div class="trust-strip-item">
-      <img src="../assets/icons/split/03-04.png" alt="" class="trust-icon">アプリDL不要
+      <img src="../assets/icons/split/03-04.png" alt="" class="trust-icon">
+      <div><div class="trust-stat-num">5,000+</div><div class="trust-stat-label">月間利用者数</div></div>
     </div>
     <div class="trust-strip-item">
-      <img src="../assets/icons/split/01-02.png" alt="" class="trust-icon">完全無料・登録なし
+      <img src="../assets/icons/split/01-02.png" alt="" class="trust-icon">
+      <div><div class="trust-stat-num">完全無料</div><div class="trust-stat-label">登録・アプリDL不要</div></div>
     </div>
     <div class="trust-strip-item">
-      <img src="../assets/icons/split/02-07.png" alt="" class="trust-icon">単身・家族・ペット対応
+      <img src="../assets/icons/split/02-07.png" alt="" class="trust-icon">
+      <div><div class="trust-stat-num">40+</div><div class="trust-stat-label">チェック項目を網羅</div></div>
     </div>
     <div class="trust-strip-item">
-      <img src="../assets/icons/split/01-04.png" alt="" class="trust-icon">カウントダウン機能付き
+      <img src="../assets/icons/split/01-04.png" alt="" class="trust-icon">
+      <div><div class="trust-stat-num">最短3分</div><div class="trust-stat-label">でスタートできる</div></div>
     </div>
   </div>
 </div>
@@ -405,6 +431,9 @@ details[open] .faq-chevron { transform: rotate(180deg); }
     </div>
     <div class="feat-grid">
       <div class="feat-card">
+        <div class="feat-card-img-wrap">
+          <img src="../assets/photos/photo_13.jpg" alt="スマホでアプリ不要">
+        </div>
         <div class="feat-card-top">
           <img src="../assets/icons/split/03-04.png" alt="アプリDL不要" class="feat-icon">
           <div>
@@ -415,6 +444,9 @@ details[open] .faq-chevron { transform: rotate(180deg); }
         <p class="feat-desc">スマホもPCもインストール不要。URLを開いてすぐチェックリストが使えます。登録・ログインも一切不要。</p>
       </div>
       <div class="feat-card">
+        <div class="feat-card-img-wrap">
+          <img src="../assets/photos/photo_07.jpg" alt="自動スケジュール生成">
+        </div>
         <div class="feat-card-top">
           <img src="../assets/icons/split/01-03.png" alt="自動スケジュール" class="feat-icon">
           <div>
@@ -425,6 +457,9 @@ details[open] .faq-chevron { transform: rotate(180deg); }
         <p class="feat-desc">引越し日を入力するだけで「8週前→前日→当日→引越し後」の時系列タスクを自動生成します。</p>
       </div>
       <div class="feat-card">
+        <div class="feat-card-img-wrap">
+          <img src="../assets/photos/photo_17.jpg" alt="カウントダウン機能">
+        </div>
         <div class="feat-card-top">
           <img src="../assets/icons/split/01-04.png" alt="カウントダウン" class="feat-icon">
           <div>
@@ -435,6 +470,9 @@ details[open] .faq-chevron { transform: rotate(180deg); }
         <p class="feat-desc">引越しまでの残り日数を大きく表示。「あと○日」で計画的に準備できます。引越し後は自動的に0日表示。</p>
       </div>
       <div class="feat-card">
+        <div class="feat-card-img-wrap">
+          <img src="../assets/photos/photo_09.jpg" alt="進捗グラフで見える化">
+        </div>
         <div class="feat-card-top">
           <img src="../assets/icons/split/03-07.png" alt="進捗グラフ" class="feat-icon">
           <div>
@@ -445,6 +483,9 @@ details[open] .faq-chevron { transform: rotate(180deg); }
         <p class="feat-desc">ドーナツグラフと棒グラフで進捗率を視覚化。完了タスク数と残タスクが数字でも一目で確認できます。</p>
       </div>
       <div class="feat-card">
+        <div class="feat-card-img-wrap">
+          <img src="../assets/photos/photo_03.jpg" alt="家族でタスク共有">
+        </div>
         <div class="feat-card-top">
           <img src="../assets/icons/split/02-06.png" alt="タスク共有" class="feat-icon">
           <div>
@@ -455,6 +496,9 @@ details[open] .faq-chevron { transform: rotate(180deg); }
         <p class="feat-desc">URLを家族やパートナーに共有できます。さらに独自タスクを自由に追加してオリジナルリストを作成可能。</p>
       </div>
       <div class="feat-card">
+        <div class="feat-card-img-wrap">
+          <img src="../assets/photos/photo_05.jpg" alt="ライフライン手続き網羅">
+        </div>
         <div class="feat-card-top">
           <img src="../assets/icons/split/02-04.png" alt="ライフラインガイド" class="feat-icon">
           <div>
